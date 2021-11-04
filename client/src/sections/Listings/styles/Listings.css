@@ -1,0 +1,11 @@
+.listings {
+  max-width: 48rem
+}
+
+.listings .listings__alert {
+  margin-bottom: 1rem;
+}
+
+.listings .listings__item {
+  padding: 1.5rem 0;
+}
