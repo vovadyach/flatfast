@@ -15,7 +15,7 @@ export const ListingsSkeleton = ({ title, error = false, amount }: Props) => {
 
   return <div className='listings-skeleton'>
     {errorAlert}
-    <h2>{title}</h2>
+    <h1>{title}</h1>
     {[...Array(amount)].map((x, index, { length }) =>
         <div key={index}>
           <Skeleton avatar={{ shape: 'square', size: 128 }} active paragraph={{ rows: 1 }}/>
