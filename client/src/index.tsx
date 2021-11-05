@@ -1,20 +1,37 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import './styles/index.css';
 
 import reportWebVitals from './reportWebVitals';
-import { Listings } from "./sections/Listings";
+
+import { Home, Host, Listing, Listings, User, NotFound } from "./sections";
 
 const client = new ApolloClient({
   uri: "/api"
 });
 
+const App = () => {
+  return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/host" element={<Host/>}/>
+          <Route path="/listing/:id" element={<Listing/>}/>
+          <Route path="/listings/:location?" element={<Listings/>}/>
+          <Route path="/user/:id" element={<User/>}/>
+          <Route path="/*" element={<NotFound/>}/>
+        </Routes>
+      </Router>
+  )
+};
+
 render(
     <React.StrictMode>
       <ApolloProvider client={client}>
-        <Listings title="For rent:"/>
+        <App/>
       </ApolloProvider>
     </React.StrictMode>,
     document.getElementById('root')
