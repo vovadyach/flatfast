@@ -1,6 +1,6 @@
 # Flatfast
 
-## Flatfast - stands for `Flat For A Short Time` is a service which serves for booking a proper flat or a house for you and your family.
+## Flatfast, which stands for 'Flat For A Short Time,' is a service designed to help you and your family book the perfect flat or house.
  
 ### Backend(server):
 NodeJS/Express/MongoAtlasDB/GraphQL/Apollo
